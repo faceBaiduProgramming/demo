@@ -18,11 +18,4 @@ public class DemoApplication {
         System.out.println("Demo启动成功");
 	}
 
-    @RequestMapping(value = "/sayHello",method = RequestMethod.GET)
-    public String sayHello(String name){
-	    String sayHello = "你好，"+name;
-//        System.out.println(sayHello);
-        return sayHello;
-    }
-
 }
