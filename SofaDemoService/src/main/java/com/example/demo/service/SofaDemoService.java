@@ -16,6 +16,5 @@ public interface SofaDemoService {
      * @param name
      * @return
      */
-    @Tracer
     String hello(String name);
 }

@@ -19,7 +19,6 @@ import java.util.Date;
 @SofaService
 public class SofaDemoServiceImpl implements SofaDemoService {
 
-    @Tracer
     @Override
     public String hello(String name) {
         SpanTags.putTags("customize","customizeValue");
