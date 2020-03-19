@@ -1,12 +1,15 @@
 package com.example.demo.controller;
 
-import com.alipay.common.tracer.core.tags.SpanTags;
 import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
+import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
 import com.alipay.sofa.tracer.plugin.flexible.annotations.Tracer;
 import com.example.demo.service.SofaDemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.xml.ws.BindingType;
 
 /**
  * File: SofaController.java

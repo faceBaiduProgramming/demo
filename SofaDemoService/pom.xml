@@ -11,5 +11,36 @@
 
     <artifactId>SofaDemoService</artifactId>
 
+    <dependencies>
 
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>runtime-sofa-boot-starter</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; SofaRPC依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alipay.sofa</groupId>-->
+<!--            <artifactId>rpc-sofa-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Sofa-boot健康建查依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alipay.sofa</groupId>-->
+<!--            <artifactId>healthcheck-sofa-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Sofa-boot集成测试和单元测试依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alipay.sofa</groupId>-->
+<!--            <artifactId>test-sofa-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- SofaTracer依赖 -->
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>tracer-sofa-boot-starter</artifactId>
+        </dependency>
+
+    </dependencies>
 </project>

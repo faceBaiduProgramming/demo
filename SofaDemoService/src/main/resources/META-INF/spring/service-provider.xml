@@ -9,6 +9,8 @@
     <bean id="sofaDemoService" class="com.example.demo.service.impl.SofaDemoServiceImpl"></bean>
 
     <sofa:service ref="sofaDemoService" interface="com.example.demo.service.SofaDemoService">
-        <sofa:binding.jvm/>
+<!--        <sofa:binding.jvm/>-->
+        <sofa:binding.dubbo/>
     </sofa:service>
+
 </beans>

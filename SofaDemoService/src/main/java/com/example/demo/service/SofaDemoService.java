@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.alipay.sofa.tracer.plugin.flexible.annotations.Tracer;
+
 /**
  * File: SofaDemoService.java
  * Description: 描述信息
@@ -10,9 +12,10 @@ package com.example.demo.service;
 public interface SofaDemoService {
 
     /**
-     *
+     * hello
      * @param name
      * @return
      */
+    @Tracer
     String hello(String name);
 }
