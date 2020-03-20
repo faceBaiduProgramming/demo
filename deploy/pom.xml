@@ -31,76 +31,25 @@
         </dependency>
         <!-- Spring boot 相关依赖 -->
 
-        <!-- SofaRPC依赖 -->
         <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>rpc-sofa-boot-starter</artifactId>
-        </dependency>
-
-        <!-- Sofa-boot健康建查依赖 -->
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>healthcheck-sofa-boot-starter</artifactId>
-        </dependency>
-
-        <!-- Sofa-boot集成测试和单元测试依赖 -->
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>test-sofa-boot-starter</artifactId>
-        </dependency>
-
-        <!-- SofaTracer依赖 -->
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>tracer-sofa-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>zipkin-reporter</artifactId>
-                    <groupId>io.zipkin.reporter2</groupId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.example</groupId>
+            <artifactId>consumer</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-server</artifactId>
-            <version>2.11.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-autoconfigure-ui</artifactId>
-            <version>2.11.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.zipkin.zipkin2</groupId>
-            <artifactId>zipkin</artifactId>
-            <version>2.11.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.reporter2</groupId>
-            <artifactId>zipkin-reporter</artifactId>
-            <version>2.7.13</version>
+            <groupId>com.example</groupId>
+            <artifactId>provide</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
-            <!--打包方式修改为-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <configuration>-->
-<!--                    <layout>ZIP</layout>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>repackage</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
             </plugin>
         </plugins>
 

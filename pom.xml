@@ -5,13 +5,14 @@
     <packaging>pom</packaging>
     <modules>
         <module>deploy</module>
-        <module>SofaDemoService</module>
-        <module>SofaDemoController</module>
+        <module>provider</module>
+        <module>consumer</module>
+        <module>facade</module>
     </modules>
     <parent>
         <groupId>com.alipay.sofa</groupId>
         <artifactId>sofaboot-dependencies</artifactId>
-        <version>3.3.1</version>
+        <version>3.2.1</version>
     </parent>
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
