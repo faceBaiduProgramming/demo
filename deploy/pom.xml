@@ -14,7 +14,7 @@
         <!-- 项目工程 相关依赖 -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>SofaDemoController</artifactId>
+            <artifactId>consumer</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
