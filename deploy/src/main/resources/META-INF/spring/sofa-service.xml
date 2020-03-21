@@ -5,17 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://sofastack.io/schema/sofaboot http://sofastack.io/schema/sofaboot.xsd"
        default-autowire="byName">
-    <!-- 服务调用拦截器配置 -->
-    <sofa:rpc-global-filter class="com.example.demo.service.filter.TestSofaFilter"/>
 
-    <bean id="testSofaFilter" class="com.example.demo.service.filter.TestSofaFilter"/>
+<!--    <bean id="testSofaFilter" class="com.example.demo.filter.TestSofaFilter"/>-->
+<!--    <sofa:rpc-global-filter class="com.example.demo.filter.TestSofaFilter"/>-->
+
     <bean id="sofaDemoService" class="com.example.demo.service.impl.SofaDemoServiceImpl"/>
-
     <sofa:service ref="sofaDemoService" interface="com.example.demo.service.SofaDemoService">
         <sofa:binding.bolt/>
         <sofa:binding.dubbo/>
         <sofa:binding.h2c/>
     </sofa:service>
-
 
 </beans>

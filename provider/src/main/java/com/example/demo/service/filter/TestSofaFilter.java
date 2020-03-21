@@ -7,8 +7,8 @@ import com.alipay.sofa.rpc.filter.Filter;
 import com.alipay.sofa.rpc.filter.FilterInvoker;
 import com.alipay.sofa.rpc.log.Logger;
 import com.alipay.sofa.rpc.log.LoggerFactory;
-import org.apache.http.client.utils.DateUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -24,11 +24,13 @@ public class TestSofaFilter extends Filter {
 
 	@Override
 	public SofaResponse invoke(FilterInvoker filterInvoker, SofaRequest sofaRequest) throws SofaRpcException {
-        System.out.println(DateUtils.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss Sss") + "\t\tserver:调用Service前");
-		try {
-			return filterInvoker.invoke(sofaRequest);
-		} finally {
-            System.out.println(DateUtils.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss Sss") + "\t\tserver:调用Service后");
-		}
+        logger.info(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用前");
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用前");
+        try {
+            return filterInvoker.invoke(sofaRequest);
+        } finally {
+            System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用后");
+            logger.info(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用后");
+        }
 	}
 }

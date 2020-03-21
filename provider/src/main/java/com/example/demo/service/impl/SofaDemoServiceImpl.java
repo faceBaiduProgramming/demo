@@ -13,7 +13,6 @@ public class SofaDemoServiceImpl implements SofaDemoService {
 
     @Override
     public String hello(String name) {
-//        SpanTags.putTags("customize","customizeValue");
         return "你好！" + name;
     }
 
