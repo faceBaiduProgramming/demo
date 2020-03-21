@@ -1,4 +1,4 @@
-package com.example.demo.service.config;
+package com.example.demo.service.filter;
 
 import com.alipay.sofa.rpc.core.exception.SofaRpcException;
 import com.alipay.sofa.rpc.core.request.SofaRequest;
@@ -7,11 +7,13 @@ import com.alipay.sofa.rpc.filter.Filter;
 import com.alipay.sofa.rpc.filter.FilterInvoker;
 import com.alipay.sofa.rpc.log.Logger;
 import com.alipay.sofa.rpc.log.LoggerFactory;
+import org.apache.http.client.utils.DateUtils;
+
+import java.util.Date;
 
 /**
  * File: TestSofaFilter.java
  * Description: 描述信息
- * Company: 南威软件股份有限公司
  * CreateTime: 2020/3/20
  *
  * @author wgaohua
@@ -22,12 +24,11 @@ public class TestSofaFilter extends Filter {
 
 	@Override
 	public SofaResponse invoke(FilterInvoker filterInvoker, SofaRequest sofaRequest) throws SofaRpcException {
-		logger.info("client:调用Service前");
+        System.out.println(DateUtils.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss Sss") + "\t\tserver:调用Service前");
 		try {
 			return filterInvoker.invoke(sofaRequest);
 		} finally {
-			logger.info("client:调用Service后");
+            System.out.println(DateUtils.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss Sss") + "\t\tserver:调用Service后");
 		}
-
 	}
 }
