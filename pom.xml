@@ -3,17 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+    <parent>
+        <groupId>com.alipay.sofa</groupId>
+        <artifactId>sofaboot-dependencies</artifactId>
+        <version>3.2.1</version>
+    </parent>
+
     <modules>
         <module>deploy</module>
         <module>provider</module>
         <module>consumer</module>
         <module>facade</module>
     </modules>
-    <parent>
-        <groupId>com.alipay.sofa</groupId>
-        <artifactId>sofaboot-dependencies</artifactId>
-        <version>3.2.1</version>
-    </parent>
+
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>

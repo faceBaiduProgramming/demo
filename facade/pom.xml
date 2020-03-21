@@ -33,11 +33,6 @@
             <artifactId>registry-client-all</artifactId>
             <version>5.2.0</version>
         </dependency>
-        <!--runtime 依赖-->
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>runtime-sofa-boot-starter</artifactId>
-        </dependency>
         <!--SOFALookout 依赖-->
         <dependency>
             <groupId>com.alipay.sofa.lookout</groupId>
