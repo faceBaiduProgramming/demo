@@ -7,14 +7,11 @@
        default-autowire="byName">
     <!-- 服务调用拦截器配置 -->
     <sofa:rpc-global-filter class="com.example.demo.service.filter.TestSofaFilter"/>
-
     <bean id="testSofaFilter" class="com.example.demo.service.filter.TestSofaFilter"/>
-    <bean id="sofaDemoService" class="com.example.demo.service.impl.SofaDemoServiceImpl"/>
 
+    <bean id="sofaDemoService" class="com.example.demo.service.impl.SofaDemoServiceImpl"/>
     <sofa:service ref="sofaDemoService" interface="com.example.demo.service.SofaDemoService">
-        <sofa:binding.bolt/>
         <sofa:binding.dubbo/>
-        <sofa:binding.h2c/>
     </sofa:service>
 
 

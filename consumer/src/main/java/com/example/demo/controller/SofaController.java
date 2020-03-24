@@ -1,5 +1,11 @@
 package com.example.demo.controller;
 
+import com.alipay.common.tracer.core.SofaTracer;
+import com.alipay.common.tracer.core.reporter.digest.manager.SofaTracerDigestReporterAsyncManager;
+import com.alipay.common.tracer.core.reporter.stat.SofaTracerStatisticReporter;
+import com.alipay.common.tracer.core.reporter.stat.manager.SofaTracerStatisticReporterManager;
+import com.alipay.sofa.common.utils.ReportUtil;
+import com.alipay.sofa.rpc.server.rest.TraceRequestFilter;
 import com.alipay.sofa.runtime.api.annotation.SofaReference;
 import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
 import com.example.demo.service.SofaDemoService;
@@ -19,26 +25,8 @@ import java.util.logging.Logger;
 @RestController
 public class SofaController {
 
-    @SofaReference(interfaceType = SofaDemoService.class, binding = @SofaReferenceBinding(bindingType = "bolt"))
-    SofaDemoService sofaDemoServiceBolt;
-
-    @SofaReference(interfaceType = SofaDemoService.class, binding = @SofaReferenceBinding(bindingType = "dubbo"))
+    @SofaReference(interfaceType = SofaDemoService.class, jvmFirst = false, binding = @SofaReferenceBinding(bindingType = "dubbo"))
     SofaDemoService sofaDemoServiceDubbo;
-
-    @SofaReference(interfaceType = SofaDemoService.class, binding = @SofaReferenceBinding(bindingType = "h2c"))
-    SofaDemoService sofaDemoServiceH2C;
-
-    @RequestMapping(value = "/bolt",method = RequestMethod.GET)
-    public String bolt(){
-        String result;
-        try {
-            result = sofaDemoServiceBolt.hello("bolt");
-        }catch (Exception e){
-            e.printStackTrace();
-            result = e.getMessage();
-        }
-        return result;
-    }
 
     @RequestMapping(value = "/dubbo",method = RequestMethod.GET)
     public String dubbo(){
@@ -51,17 +39,4 @@ public class SofaController {
         }
         return result;
     }
-
-    @RequestMapping(value = "/h2c",method = RequestMethod.GET)
-    public String h2c(){
-        String result;
-        try {
-            result = sofaDemoServiceH2C.hello("H2C");
-        }catch (Exception e){
-            e.printStackTrace();
-            result = e.getMessage();
-        }
-        return result;
-    }
-
 }
