@@ -6,8 +6,8 @@
         http://sofastack.io/schema/sofaboot http://sofastack.io/schema/sofaboot.xsd"
        default-autowire="byName">
 
-    <bean id="testSofaFilter" class="com.example.demo.controller.filter.TestSofaFilter"/>
+    <bean id="testSofaFilter" class="com.example.demo.controller.filter.TestSofaConsumerFilter"/>
 
-    <sofa:rpc-global-filter class="com.example.demo.controller.filter.TestSofaFilter"/>
+    <sofa:rpc-global-filter class="com.example.demo.controller.filter.TestSofaConsumerFilter"/>
 
 </beans>

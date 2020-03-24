@@ -1,4 +1,4 @@
-package com.example.demo.service.filter;
+package com.example.demo.controller.filter;
 
 import com.alipay.common.tracer.core.context.trace.SofaTraceContext;
 import com.alipay.common.tracer.core.holder.SofaTraceContextHolder;
@@ -14,25 +14,25 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * File: TestSofaFilter.java
+ * File: TestSofaConsumerFilter.java
  * Description: 描述信息
  * CreateTime: 2020/3/20
  *
  * @author wgaohua
  */
-public class TestSofaFilter extends Filter {
+public class TestSofaConsumerFilter extends Filter {
 
 	@Override
 	public SofaResponse invoke(FilterInvoker filterInvoker, SofaRequest sofaRequest) throws SofaRpcException {
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用前");
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tClient:调用前");
         SofaTraceContext sofaTraceContext = SofaTraceContextHolder.getSofaTraceContext();
         SofaTracerSpan sofaTracerSpan = sofaTraceContext.getCurrentSpan();
         Map<String, String> tagsStr = sofaTracerSpan.getTagsWithStr();
-        tagsStr.put("ServerKey","自定义SofaRpc Server日志");
-        try {
-            return filterInvoker.invoke(sofaRequest);
-        } finally {
-            System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tService:调用后");
-        }
+        tagsStr.put("ClientKey","自定义SofaRpc Client日志");
+		try {
+			return filterInvoker.invoke(sofaRequest);
+		} finally {
+            System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss-Sss").format(new Date()) + "\t\tClient:调用后");
+		}
 	}
 }

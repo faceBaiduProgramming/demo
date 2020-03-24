@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * File: TestMvcFilter.java
+ * File: TestSofaMvcFilter.java
  * Description: 描述信息
  * CreateTime: 2020/3/23
  *
  * @author wgaohua
  */
 @WebFilter(urlPatterns = "/*")
-public class TestMvcFilter implements Filter {
+public class TestSofaMvcFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         SofaTraceContext sofaTraceContext = SofaTraceContextHolder.getSofaTraceContext();
